@@ -1173,6 +1173,13 @@
         padding: 80px 5% !important;
         gap: 60px !important;
       }
+      
+      /* Remove double-padding between contiguous white sections */
+      .s-statement,
+      .s-solution,
+      .s-tech {
+        padding-top: 0 !important;
+      }
       /* Flex layouts for correct ordering (text first, image bottom) */
       .statement-inner,
       .sol-block,
