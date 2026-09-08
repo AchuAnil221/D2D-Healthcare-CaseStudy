@@ -1739,7 +1739,9 @@
     const nav = document.getElementById('nav');
     if (nav) {
       const updateNav = () => {
-        if (window.scrollY > 80) nav.classList.remove('transparent');
+        const hero = document.getElementById('hero');
+        const threshold = hero ? hero.offsetHeight - 80 : 80;
+        if (window.scrollY > threshold) nav.classList.remove('transparent');
         else nav.classList.add('transparent');
       };
       window.addEventListener('scroll', updateNav, { passive: true });
