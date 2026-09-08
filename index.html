@@ -420,14 +420,14 @@
       font-size: 3rem;
       font-weight: 700;
       color: var(--ink);
-      margin-bottom: 16px;
+      margin-bottom: 24px;
     }
 
     .stmt-heading-line {
       width: 60px;
       height: 4px;
       background-color: var(--blue);
-      margin-bottom: 24px;
+      margin-bottom: 40px;
     }
 
     .stmt-text {
@@ -547,7 +547,7 @@
       letter-spacing: -0.025em;
       line-height: 1.1;
       color: var(--ink);
-      margin-bottom: 16px;
+      margin-bottom: 8px;
     }
 
     .sol-title .acc {
@@ -558,7 +558,8 @@
       font-size: 1.4rem;
       color: rgba(8, 15, 30, 0.7);
       line-height: 1.5;
-      margin-bottom: 24px;
+      margin-bottom: 40px;
+      margin-top: 20px;
     }
 
     .sol-features {
@@ -652,7 +653,7 @@
       line-height: 1.1;
       color: var(--ink);
       margin-top: 0;
-      margin-bottom: 16px;
+      margin-bottom: 40px;
       letter-spacing: -0.03em;
     }
 
@@ -675,7 +676,7 @@
     }
 
     .tech-list li {
-      margin-bottom: 32px;
+      margin-bottom: 70px;
     }
 
     .tech-list li:last-child {
@@ -731,20 +732,13 @@
     }
 
     .impact-h2 {
-      font-size: clamp(2.5rem, 4vw, 4.5rem);
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
       font-weight: 600;
-      line-height: 1.1;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
       color: #fff;
-      margin-bottom: 16px;
-      letter-spacing: -0.02em;
-    }
-
-    .impact-body {
-      font-size: 1.4rem;
-      color: rgba(255, 255, 255, 0.6);
-      line-height: 1.5;
-      margin-bottom: 24px;
-      max-width: 500px;
+      max-width: 640px;
+      margin-bottom: 80px;
     }
 
     .metrics-row {
@@ -801,20 +795,21 @@
     }
 
     .outro-h2 {
-      font-size: clamp(2.5rem, 5vw, 5.5rem);
-      font-weight: 600;
-      line-height: 1.1;
+      font-size: clamp(2.8rem, 6vw, 6.5rem);
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
       color: var(--ink);
-      margin-bottom: 16px;
-      letter-spacing: -0.03em;
+      max-width: 100%;
+      margin-bottom: 40px;
     }
 
     .outro-desc {
-      font-size: 1.4rem;
+      font-size: 1.45rem;
       color: rgba(8, 15, 30, 0.7);
-      line-height: 1.5;
-      max-width: 600px;
-      margin: 0 auto 32px auto;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     .outro-bottom {
@@ -1256,6 +1251,7 @@
       .eyebrow {
         font-size: 2.2rem !important;
         line-height: 1.15;
+        margin-bottom: 16px !important;
       }
       .hero-desc-text {
         font-size: 1.15rem;
@@ -1333,12 +1329,14 @@
         grid-template-columns: 1fr;
         gap: 16px;
       }
-      .why-text p, .sol-body {
+      .why-text p, .sol-body, .impact-body, .outro-desc, .stmt-text p {
         font-size: 1.15rem;
-        margin-bottom: 24px;
+        margin-bottom: 24px !important;
+        margin-top: 0 !important;
       }
-      .tech-intro, .outro-desc {
+      .tech-intro {
         font-size: 1.15rem;
+        margin-bottom: 24px !important;
       }
       .tech-list li {
         margin-bottom: 30px;
