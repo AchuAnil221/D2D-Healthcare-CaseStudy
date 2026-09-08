@@ -1317,9 +1317,17 @@
         background-color: #0044ff !important;
       }
       .hero-bg-layer {
-        transform: scale(1.15) !important;
-        background-position: center !important;
+        inset: auto !important;
+        top: -10px !important;
+        bottom: -10px !important;
+        left: -10px !important;
+        right: -10px !important;
+        width: calc(100% + 20px) !important;
+        height: calc(100% + 20px) !important;
+        background-position: center center !important;
         background-size: cover !important;
+        transform: none !important;
+        will-change: auto !important;
       }
       .eco-cards {
         grid-template-columns: 1fr;
