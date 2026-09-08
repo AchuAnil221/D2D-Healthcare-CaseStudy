@@ -1290,9 +1290,6 @@
       .s-hero {
         min-height: 100vh;
       }
-      .hero-bg-layer {
-        transform: scale(1.15) !important;
-      }
       .eco-cards {
         grid-template-columns: 1fr;
         gap: 16px;
@@ -1774,7 +1771,7 @@
     const heroContent = document.getElementById('heroContent');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (!prefersReducedMotion) {
+    if (!prefersReducedMotion && window.innerWidth > 768) {
       let ticking = false;
       window.addEventListener('scroll', () => {
         if (!ticking) {
