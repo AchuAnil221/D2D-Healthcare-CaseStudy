@@ -1159,8 +1159,36 @@
 
     @media (max-width: 768px) {
       :root {
-        --sp: 60px 5%;
+        --sp: 40px 5%;
       }
+      /* Reduce unnecessary white spacings */
+      .s-statement,
+      .s-solution,
+      .s-tech,
+      .s-impact,
+      .s-outro,
+      .s-why-exists,
+      .s-about,
+      .s-ecosystem {
+        padding: 40px 5% !important;
+      }
+      /* Flex layouts for correct ordering (text first, image bottom) */
+      .statement-inner,
+      .sol-block,
+      .sol-block.flip,
+      .tech-inner,
+      .s-why-exists {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+      .sol-text-half, .stmt-right, .why-text, .tech-left {
+        order: 1;
+      }
+      .sol-img-half, .stmt-left, .why-graphic, .tech-right {
+        order: 2;
+      }
+      /* Nav mobile */
       .nav {
         padding: 16px 5%;
       }
@@ -1196,19 +1224,28 @@
         font-size: 1.4rem;
         color: var(--ink) !important;
       }
-      .hero-h1 {
-        font-size: clamp(2.2rem, 8vw, 3rem);
+      /* Uniform Headings */
+      .hero-h1,
+      .stmt-heading,
+      .tech-title,
+      .impact-h2,
+      .outro-h2,
+      .solution-main-title,
+      .sol-title,
+      .eyebrow {
+        font-size: 2.2rem !important;
+        line-height: 1.15;
       }
       .hero-desc-text {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
       }
       .hero-footer-bar {
         grid-template-columns: 1fr;
         position: relative;
-        padding: 40px 5%;
+        padding: 30px 5%;
       }
       .hero-content {
-        padding: 25vh 5% 5vh;
+        padding: 20vh 5% 5vh;
         min-height: auto;
       }
       .s-hero {
@@ -1216,48 +1253,58 @@
       }
       .eco-cards {
         grid-template-columns: 1fr;
+        gap: 20px;
       }
       .deck-container {
-        width: 95%;
+        width: 100%;
         height: 40vh;
         min-height: 300px;
       }
       .s-flowing-menu {
-        height: 50vh;
+        height: auto;
+        padding: 40px 0;
       }
       .menu__item-link {
-        font-size: clamp(1.2rem, 5vw, 2rem);
+        font-size: 1.5rem;
         white-space: normal;
-        padding: 0 16px;
+        padding: 16px 16px;
       }
       .marquee__img {
-        width: 150px;
-        height: 8vh;
-        min-height: 60px;
-      }
-      .stmt-heading {
-        font-size: 2.2rem;
+        width: 120px;
+        height: 6vh;
+        min-height: 50px;
       }
       .stmt-text {
         font-size: 1.15rem;
       }
-      .tech-title, .impact-h2, .outro-h2, .solution-main-title {
-        font-size: clamp(2rem, 8vw, 2.5rem);
-      }
       .metric-num {
-        font-size: 3rem;
+        font-size: 2.5rem;
       }
       .sol-features {
         grid-template-columns: 1fr;
+        gap: 16px;
       }
       .why-text p, .sol-body {
         font-size: 1.15rem;
+        margin-bottom: 24px;
       }
       .tech-intro, .outro-desc {
         font-size: 1.15rem;
       }
+      .tech-list li {
+        margin-bottom: 30px;
+      }
+      .tl-desc {
+        font-size: 1.1rem;
+      }
       .metric-box {
         padding: 32px 24px;
+      }
+      .sol-img-half {
+        height: auto;
+      }
+      .sol-img-half img {
+        transform: scale(1) !important;
       }
     }
   </style>
