@@ -109,7 +109,7 @@
 
     /* ── NAV (UNCHANGED) ─────────────────────────────────────────── */
     .nav {
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
       right: 0;
@@ -1741,19 +1741,8 @@
       (i) => base + i * (base * 0.9 + Math.random() * jitter);
 
     /* ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
-       00 · NAV SCROLL
+       00 · NAV SCROLL (Removed since nav is absolute)
     ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌ */
-    const nav = document.getElementById('nav');
-    if (nav) {
-      const updateNav = () => {
-        const hero = document.getElementById('hero');
-        const threshold = hero ? hero.offsetHeight - 80 : 80;
-        if (window.scrollY > threshold) nav.classList.remove('transparent');
-        else nav.classList.add('transparent');
-      };
-      window.addEventListener('scroll', updateNav, { passive: true });
-      updateNav();
-    }
 
     /* ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
        01 · HERO — Lazza parallax logic (UNCHANGED)
