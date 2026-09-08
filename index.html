@@ -1095,62 +1095,169 @@
     /* ──────────────────────────────────────────────────────────────
        RESPONSIVE
     ────────────────────────────────────────────────────────────── */
+    .nav-mobile-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+      z-index: 201;
+    }
+    .nav-mobile-toggle span {
+      display: block;
+      width: 28px;
+      height: 2px;
+      background-color: var(--ink);
+      transition: all 0.3s ease;
+    }
+    .nav.transparent .nav-mobile-toggle span {
+      background-color: #fff;
+    }
+    /* When menu is open, hamburger lines become dark and form an X (or just dark for now) */
+    .nav.menu-open .nav-mobile-toggle span {
+      background-color: var(--ink);
+    }
+
     @media (max-width:1024px) {
       :root {
         --sp: 100px 5%;
       }
-
-      .hero-content {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-desc-col {
-        display: none;
-      }
-
-      .statement-inner {
+      .statement-inner,
+      .sol-block,
+      .sol-block.flip,
+      .tech-inner,
+      .s-why-exists {
         grid-template-columns: 1fr;
         gap: 60px;
       }
-
-      .sol-block,
-      .sol-block.flip {
-        grid-template-columns: 1fr;
-        direction: ltr;
-      }
-
       .sol-img-half {
-        height: 50vw;
+        height: auto;
         min-height: 260px;
       }
-
-      .tech-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .tech-img-col {
+      .tech-left {
         position: static;
       }
-
+      .eco-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero-footer-bar {
+        grid-template-columns: repeat(2, 1fr);
+      }
       .metrics-row {
         grid-template-columns: 1fr;
       }
-
-      .screens-layout {
+      .screens-layout, .gallery-grid {
         grid-template-columns: 1fr;
       }
-
       .screens-img-col {
-        height: 50vw;
+        height: auto;
         min-height: 300px;
       }
-
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-
       .gal-img.span2 {
         grid-column: span 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --sp: 60px 5%;
+      }
+      .nav {
+        padding: 16px 5%;
+      }
+      .nav.transparent {
+        padding-top: 16px;
+      }
+      .nav-mobile-toggle {
+        display: flex;
+      }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        transform: translateY(-100%);
+        transition: transform 0.4s ease;
+        z-index: 200;
+        opacity: 0;
+        pointer-events: none;
+      }
+      .nav.menu-open .nav-links {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .nav-links a {
+        font-size: 1.4rem;
+        color: var(--ink) !important;
+      }
+      .hero-h1 {
+        font-size: clamp(2.2rem, 8vw, 3rem);
+      }
+      .hero-desc-text {
+        font-size: 1.1rem;
+      }
+      .hero-footer-bar {
+        grid-template-columns: 1fr;
+        position: relative;
+        padding: 40px 5%;
+      }
+      .hero-content {
+        padding: 25vh 5% 5vh;
+        min-height: auto;
+      }
+      .s-hero {
+        min-height: auto;
+      }
+      .eco-cards {
+        grid-template-columns: 1fr;
+      }
+      .deck-container {
+        width: 95%;
+        height: 40vh;
+        min-height: 300px;
+      }
+      .s-flowing-menu {
+        height: 50vh;
+      }
+      .menu__item-link {
+        font-size: clamp(1.2rem, 5vw, 2rem);
+        white-space: normal;
+        padding: 0 16px;
+      }
+      .marquee__img {
+        width: 150px;
+        height: 8vh;
+        min-height: 60px;
+      }
+      .stmt-heading {
+        font-size: 2.2rem;
+      }
+      .stmt-text {
+        font-size: 1.15rem;
+      }
+      .tech-title, .impact-h2, .outro-h2, .solution-main-title {
+        font-size: clamp(2rem, 8vw, 2.5rem);
+      }
+      .metric-num {
+        font-size: 3rem;
+      }
+      .sol-features {
+        grid-template-columns: 1fr;
+      }
+      .why-text p, .sol-body {
+        font-size: 1.15rem;
+      }
+      .tech-intro, .outro-desc {
+        font-size: 1.15rem;
+      }
+      .metric-box {
+        padding: 32px 24px;
       }
     }
   </style>
@@ -1163,7 +1270,12 @@
     <div class="nav-brand">
       <div class="nav-logo-text">Woodenclouds</div>
     </div>
-    <div class="nav-links">
+    <div class="nav-mobile-toggle" id="navToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-links" id="navLinks">
       <a href="#">Services</a>
       <a href="#">Solutions</a>
       <a href="#">Industries</a>
@@ -1673,6 +1785,15 @@
       const bottomEdgeDist = distMetric(mouseX, mouseY, width / 2, height);
       return topEdgeDist < bottomEdgeDist ? 'top' : 'bottom';
     };
+
+    // Mobile Navigation Toggle
+    const navToggle = document.getElementById('navToggle');
+    const nav = document.getElementById('nav');
+    if (navToggle && nav) {
+      navToggle.addEventListener('click', () => {
+        nav.classList.toggle('menu-open');
+      });
+    }
 
     document.querySelectorAll('.menu__item').forEach(item => {
       const link = item.querySelector('.menu__item-link');
