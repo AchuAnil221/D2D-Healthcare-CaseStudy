@@ -1315,19 +1315,13 @@
       .s-hero {
         min-height: 100vh;
         background-color: #0044ff !important;
+        background-image: url('d2d hero.png') !important;
+        background-size: auto 110% !important; /* Crops vertical letterboxing */
+        background-position: center !important;
+        background-repeat: no-repeat !important;
       }
       .hero-bg-layer {
-        inset: auto !important;
-        top: -10px !important;
-        bottom: -10px !important;
-        left: -10px !important;
-        right: -10px !important;
-        width: calc(100% + 20px) !important;
-        height: calc(100% + 20px) !important;
-        background-position: center center !important;
-        background-size: cover !important;
-        transform: none !important;
-        will-change: auto !important;
+        display: none !important;
       }
       .eco-cards {
         grid-template-columns: 1fr;
