@@ -589,6 +589,15 @@
     /* ──────────────────────────────────────────────────────────────
        DECK EXPANSION SECTION
     ────────────────────────────────────────────────────────────── */
+    .s-deck {
+      background: #fff;
+      padding: 240px 0 60px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
     .deck-container {
       width: 80%;
       max-width: 1200px;
@@ -935,7 +944,7 @@
 
     .solution-hd {
       max-width: 1280px;
-      margin: 0 auto;
+      margin: 0 auto 5rem auto;
       text-align: center;
       padding: 0 8%;
     }
@@ -1291,6 +1300,9 @@
         gap: 16px;
         margin-top: 24px;
       }
+      .solution-hd {
+        margin-bottom: 3rem !important;
+      }
       .eco-header {
         margin-bottom: 24px !important;
       }
@@ -1299,6 +1311,9 @@
         height: auto;
         min-height: 200px;
         margin-top: 20px;
+      }
+      .s-deck {
+        padding: 60px 0 0 0 !important;
       }
       .deck-container img {
         position: relative;
@@ -1485,8 +1500,7 @@
   <!-- ════════════════════════════════════════════════════════════
      DECK EXPANSION SECTION
 ═══════════════════════════════════════════════════════════════ -->
-  <section class="s-deck" id="deckWrap"
-    style="background: #fff; padding: 60px 0 0 0; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+  <section class="s-deck" id="deckWrap">
     <div class="deck-container" id="deckContainer">
       <img src="Deck.png" alt="Platform Deck" id="deckImg" />
     </div>
@@ -1495,8 +1509,8 @@
   <!-- ════════════════════════════════════════════════════════════
      12 · SYSTEM BREAKDOWN (New)
 ═══════════════════════════════════════════════════════════════ -->
-  <section class="s-ecosystem" id="ecosystem" style="background:#fff; padding: 40px 5%;">
-    <div class="solution-hd" style="margin-bottom: 80px; text-align: center;">
+  <section class="s-ecosystem" id="ecosystem" style="background:#fff;">
+    <div class="solution-hd" style="text-align: center;">
       <h2 class="solution-main-title"
         style="font-size: 3rem; font-weight: 700; background: linear-gradient(135deg, var(--ink) 0%, var(--blue) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
         One platform. Every delivery.<br>Total visibility.</h2>
