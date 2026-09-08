@@ -420,14 +420,14 @@
       font-size: 3rem;
       font-weight: 700;
       color: var(--ink);
-      margin-bottom: 24px;
+      margin-bottom: 16px;
     }
 
     .stmt-heading-line {
       width: 60px;
       height: 4px;
       background-color: var(--blue);
-      margin-bottom: 40px;
+      margin-bottom: 24px;
     }
 
     .stmt-text {
@@ -547,7 +547,7 @@
       letter-spacing: -0.025em;
       line-height: 1.1;
       color: var(--ink);
-      margin-bottom: 8px;
+      margin-bottom: 16px;
     }
 
     .sol-title .acc {
@@ -558,8 +558,7 @@
       font-size: 1.4rem;
       color: rgba(8, 15, 30, 0.7);
       line-height: 1.5;
-      margin-bottom: 40px;
-      margin-top: 20px;
+      margin-bottom: 24px;
     }
 
     .sol-features {
@@ -653,7 +652,7 @@
       line-height: 1.1;
       color: var(--ink);
       margin-top: 0;
-      margin-bottom: 40px;
+      margin-bottom: 16px;
       letter-spacing: -0.03em;
     }
 
@@ -676,8 +675,7 @@
     }
 
     .tech-list li {
-      margin-bottom: 70px;
-
+      margin-bottom: 32px;
     }
 
     .tech-list li:last-child {
@@ -733,13 +731,20 @@
     }
 
     .impact-h2 {
-      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-size: clamp(2.5rem, 4vw, 4.5rem);
       font-weight: 600;
-      letter-spacing: -0.025em;
-      line-height: 1.15;
+      line-height: 1.1;
       color: #fff;
-      max-width: 640px;
-      margin-bottom: 80px;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .impact-body {
+      font-size: 1.4rem;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.5;
+      margin-bottom: 24px;
+      max-width: 500px;
     }
 
     .metrics-row {
@@ -796,21 +801,20 @@
     }
 
     .outro-h2 {
-      font-size: clamp(2.8rem, 6vw, 6.5rem);
-      font-weight: 500;
-      letter-spacing: -0.04em;
-      line-height: 1.05;
+      font-size: clamp(2.5rem, 5vw, 5.5rem);
+      font-weight: 600;
+      line-height: 1.1;
       color: var(--ink);
-      max-width: 100%;
-      margin-bottom: 40px;
+      margin-bottom: 16px;
+      letter-spacing: -0.03em;
     }
 
     .outro-desc {
-      font-size: 1.45rem;
+      font-size: 1.4rem;
       color: rgba(8, 15, 30, 0.7);
-      line-height: 1.6;
-      max-width: 800px;
-      margin: 0 auto;
+      line-height: 1.5;
+      max-width: 600px;
+      margin: 0 auto 32px auto;
     }
 
     .outro-bottom {
@@ -1171,8 +1175,8 @@
       .s-why-exists,
       .s-about,
       .s-ecosystem {
-        padding: 80px 5% !important;
-        gap: 60px !important;
+        padding: 40px 5% !important;
+        gap: 32px !important;
       }
       
       /* Remove double-padding between contiguous white sections */
@@ -1189,7 +1193,15 @@
       .s-why-exists {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 24px;
+      }
+      
+      /* Fix images with built-in transparent whitespace */
+      .why-graphic img {
+        margin-bottom: -15%;
+      }
+      .deck-container img {
+        margin-bottom: -15%;
       }
       .sol-text-half, .stmt-right, .why-text, .tech-left {
         order: 1;
@@ -1283,7 +1295,11 @@
       }
       .eco-cards {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 16px;
+        margin-top: 24px;
+      }
+      .eco-header {
+        margin-bottom: 24px !important;
       }
       .deck-container {
         width: 100%;
@@ -1298,7 +1314,7 @@
       }
       .s-flowing-menu {
         height: auto;
-        padding: 0 0 80px 0;
+        padding: 0 0 40px 0;
       }
       .menu__item-link {
         font-size: 1.5rem;
